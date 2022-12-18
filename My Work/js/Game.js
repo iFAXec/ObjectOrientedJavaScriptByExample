@@ -5,6 +5,15 @@ class Game {
         this.ready = false;
     }
 
+
+     /**
+     * Get active player to play
+     * @return {Object} Player - active player
+     */
+     get activePlayer(){
+        return this.players.find(player => player.active === true);
+    }
+
     /** 
      * Create twio player objects
      * @return {Array} - An array of two player objects
@@ -17,11 +26,14 @@ class Game {
         return players;
 
     }
-
-
-    
-
-
+/**
+ * Begin game
+ */
+    startGame(){
+        this.board.drawHTMLBoard();
+        this.activePlayer.activeToken.drawHTMLToken();
+        this.ready = true;
+    };   
 
     }
 
