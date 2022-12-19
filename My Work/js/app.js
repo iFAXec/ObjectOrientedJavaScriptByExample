@@ -11,3 +11,8 @@ beginGame.addEventListener("click", ()=>{
     this.style.display = 'none';
     document.getElementById('play-area').style.opacity = '1';
 })
+
+
+document.addEventListener("keydown",(e)=>{
+    game.handleKeydown(e);
+});
